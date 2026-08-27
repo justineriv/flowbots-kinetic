@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=69">
+<link rel="stylesheet" href="style.css?v=71">
 <script>/* These are the animated designs: motion is on unless a URL explicitly
    asks for ?motion=off. A production build should restore respect for
    prefers-reduced-motion; this is a review prototype. */
@@ -459,30 +459,42 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
       <span class="eyebrow">Not Sure Where to Start?</span>
       <h2>Find Your Biggest <span class="grad-text">Automation Opportunity</span></h2>
     </div>
-    <div class="grid-2">
-      <div class="card reveal">
-        <span class="card-num">01</span>
-        <h3>“We're missing calls after hours”</h3>
-        <p>Your phone goes to voicemail at 5 PM and leads call your competitor.</p>
-        <ul><li><span class="grad-text"><strong>Voice AI</strong></span> — AI answers every call 24/7, qualifies leads, books appointments, and transfers with full context.</li></ul>
+    <div class="opp-list">
+      <div class="opp-row reveal">
+        <figure class="opp-media"><img src="images/opp-voice.jpg" alt="" width="760" height="570" loading="lazy" decoding="async" onerror="this.closest('figure').remove()"></figure>
+        <div class="opp-copy">
+          <span class="card-num">01</span>
+          <h3>“We're missing calls after hours”</h3>
+          <p>Your phone goes to voicemail at 5 PM and leads call your competitor.</p>
+          <p class="opp-answer"><span class="grad-text"><strong>Voice AI</strong></span> — AI answers every call 24/7, qualifies leads, books appointments, and transfers with full context.</p>
+        </div>
       </div>
-      <div class="card reveal">
-        <span class="card-num">02</span>
-        <h3>“Leads go cold before we follow up”</h3>
-        <p>By the time your team responds, the prospect already hired someone else.</p>
-        <ul><li><span class="grad-text"><strong>SMS &amp; Email AI</strong></span> — Instant follow-ups fire within seconds. Two-way conversations that convert leads while you sleep.</li></ul>
+      <div class="opp-row reveal">
+        <figure class="opp-media"><img src="images/opp-sms.jpg" alt="" width="760" height="570" loading="lazy" decoding="async" onerror="this.closest('figure').remove()"></figure>
+        <div class="opp-copy">
+          <span class="card-num">02</span>
+          <h3>“Leads go cold before we follow up”</h3>
+          <p>By the time your team responds, the prospect already hired someone else.</p>
+          <p class="opp-answer"><span class="grad-text"><strong>SMS &amp; Email AI</strong></span> — Instant follow-ups fire within seconds. Two-way conversations that convert leads while you sleep.</p>
+        </div>
       </div>
-      <div class="card reveal">
-        <span class="card-num">03</span>
-        <h3>“My team is buried in repetitive tasks”</h3>
-        <p>Data entry, scheduling, invoicing, follow-ups — your staff spends hours on work that doesn't grow the business.</p>
-        <ul><li><span class="grad-text"><strong>Custom Workflow Automation</strong></span> — CRM updates, route optimization, technician dispatch, invoicing, compliance, reporting — all running automatically with zero manual input.</li></ul>
+      <div class="opp-row reveal">
+        <figure class="opp-media"><img src="images/opp-workflow.jpg" alt="" width="760" height="570" loading="lazy" decoding="async" onerror="this.closest('figure').remove()"></figure>
+        <div class="opp-copy">
+          <span class="card-num">03</span>
+          <h3>“My team is buried in repetitive tasks”</h3>
+          <p>Data entry, scheduling, invoicing, follow-ups — your staff spends hours on work that doesn't grow the business.</p>
+          <p class="opp-answer"><span class="grad-text"><strong>Custom Workflow Automation</strong></span> — CRM updates, route optimization, technician dispatch, invoicing, compliance, reporting — all running automatically with zero manual input.</p>
+        </div>
       </div>
-      <div class="card reveal">
-        <span class="card-num">04</span>
-        <h3>“We need to scale without hiring”</h3>
-        <p>Business is growing but you can't keep adding headcount to keep up with demand.</p>
-        <ul><li><span class="grad-text"><strong>Unified AI Brain</strong></span> — One AI system with shared memory across every channel. Handle 10x the volume without adding a single employee.</li></ul>
+      <div class="opp-row reveal">
+        <figure class="opp-media"><img src="images/opp-brain.jpg" alt="" width="760" height="570" loading="lazy" decoding="async" onerror="this.closest('figure').remove()"></figure>
+        <div class="opp-copy">
+          <span class="card-num">04</span>
+          <h3>“We need to scale without hiring”</h3>
+          <p>Business is growing but you can't keep adding headcount to keep up with demand.</p>
+          <p class="opp-answer"><span class="grad-text"><strong>Unified AI Brain</strong></span> — One AI system with shared memory across every channel. Handle 10x the volume without adding a single employee.</p>
+        </div>
       </div>
     </div>
     <p class="center mt-3 muted reveal">Not sure which one you need? That's exactly what the discovery call is for.</p>
@@ -899,6 +911,6 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 })();
 </script>
 
-<script src="app.js?v=69"></script>
+<script src="app.js?v=71"></script>
 </body>
 </html>
