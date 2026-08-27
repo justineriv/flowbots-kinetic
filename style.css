@@ -1346,3 +1346,9 @@ section[style*="padding-top:0"]{padding-top:0!important}
 /* ---- Proof photo band, now sitting directly under the value strip ---- */
 .photo-band{padding-top:var(--s7);padding-bottom:var(--s7)}
 .photo-band .bleed{margin-top:0;margin-bottom:0}
+
+/* The O'Leary shot is a wide group photo. At the default 420px band height a
+   full-width cover crop cuts through faces, so this band runs taller and the
+   crop favours the upper half where the heads are. */
+.photo-band .bleed-figure{min-height:min(620px,46vw)}
+.photo-band .bleed-figure img{object-position:center 40%}
