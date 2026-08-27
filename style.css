@@ -2163,3 +2163,56 @@ a{color:var(--blue-link)}
   mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
   -webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
 }
+
+/* ============================================================
+   PICTURE FRAMES
+   A matted frame: the photograph sits on a textured backing panel with an
+   offset hairline in the brand blue and a small accent block at one corner.
+   Same idea as the Hardaway mat, cut in this site's palette.
+   The frame is drawn INSIDE the figure's own box so nothing can overflow.
+   ============================================================ */
+.opp-media,.build-media,.aside-media,.orbit-media,.hero-photo,.photo-band .bleed-figure{
+  position:relative;isolation:isolate;
+}
+/* textured mat behind the image */
+.opp-media::before,.build-media::before,.aside-media::before{
+  content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;
+  background-color:#0B2135;
+  background-image:radial-gradient(rgba(143,227,250,.20) 1px,transparent 1px);
+  background-size:14px 14px;
+}
+/* the photograph, inset so the mat shows as a border */
+.opp-media img,.build-media img,.aside-media img{
+  position:relative;z-index:1;border-radius:inherit;
+}
+.opp-media img{
+  width:calc(100% - 20px);height:calc(100% - 20px);margin:10px;border-radius:14px;
+}
+.aside-media img{width:calc(100% - 18px);margin:9px;border-radius:12px;display:block}
+.build-media img{
+  width:calc(100% - 20px);height:calc(100% - 20px);top:10px;left:10px;border-radius:14px;
+}
+/* offset hairline, drawn inside the box */
+.opp-media::after,.build-media::after,.aside-media::after,.orbit-media::after{
+  content:"";position:absolute;z-index:2;pointer-events:none;
+  inset:4px;border:1px solid rgba(143,227,250,.55);border-radius:inherit;
+}
+/* corner accent block */
+.opp-media,.build-media,.aside-media{overflow:visible}
+.opp-row .opp-media > .corner,.build-media > .corner{display:none}
+.opp-media,.build-media,.aside-media{border-radius:22px}
+.sec-lightblue :is(.opp-media,.build-media,.aside-media)::before{
+  background-color:#CFE6F2;
+  background-image:radial-gradient(rgba(11,83,114,.22) 1px,transparent 1px);
+}
+.sec-lightblue :is(.opp-media,.build-media,.aside-media)::after{border-color:rgba(11,83,114,.42)}
+
+/* the round portrait keeps a two-ring treatment */
+.orbit-media::after{inset:6px;border-radius:50%;border-color:rgba(143,227,250,.5)}
+.orbit-media{box-shadow:0 0 0 10px rgba(143,227,250,.10),0 30px 70px rgba(6,18,34,.45)}
+
+/* hero photo and the O'Leary band get the offset rule only */
+.hero-photo::after,.photo-band .bleed-figure::after{
+  content:"";position:absolute;inset:8px;z-index:2;pointer-events:none;
+  border:1px solid rgba(143,227,250,.45);border-radius:18px;
+}
