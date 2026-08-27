@@ -2126,3 +2126,40 @@ a{color:var(--blue-link)}
   .opp-row:nth-child(even) .opp-media{order:0}
   .opp-media{aspect-ratio:16/9}
 }
+
+/* ============================================================
+   BAND TEXTURE
+   Both grounds stay solid underneath - the texture is a low-opacity overlay,
+   so contrast measurement against the ground colour remains valid. Dark bands
+   get the dot field, light bands get a fine grid, which means the texture
+   alternates with the colour rather than repeating.
+   ============================================================ */
+.sec-dark,.sec-lightblue{position:relative;isolation:isolate}
+.sec-dark > *,.sec-lightblue > *{position:relative;z-index:1}
+.sec-dark::after,.sec-lightblue::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);
+}
+/* dark: dot field */
+.sec-dark::after{
+  background-image:radial-gradient(rgba(143,227,250,.16) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+/* light: fine grid lines */
+.sec-lightblue::after{
+  background-image:
+    linear-gradient(rgba(11,83,114,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(11,83,114,.07) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+/* the hero keeps its own animated field; the prefoot gets the dark dots */
+.prefoot{position:relative;isolation:isolate}
+.prefoot > *{position:relative;z-index:1}
+.prefoot::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(rgba(143,227,250,.14) 1px,transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
+}
