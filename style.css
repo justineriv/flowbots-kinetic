@@ -1930,3 +1930,40 @@ html .hiw-screen .k.ok{color:var(--good-text)}
 :root{--blue-link:#0B6D8C}
 a{color:var(--blue-link)}
 .sec-lightblue a,.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) a{color:var(--blue-link)}
+
+/* INTEGRATIONS — boxes off, logos sit on the ground with a star between them.
+   The star is a trailing separator on every item rather than a between-items
+   rule, because the track is duplicated for the loop and a between-items rule
+   would drop the star at the seam. */
+.int-marks li{
+  border:0;background:none;min-width:0;height:auto;
+  padding:0 var(--s5);position:relative;
+}
+.int-marks li:hover{transform:none;border:0}
+.int-marks li::after{
+  content:"\2726";position:absolute;right:calc(var(--s5) * -0.5);top:50%;
+  transform:translate(50%,-50%);font-size:.62rem;line-height:1;
+  color:var(--blue-bright);opacity:.55;pointer-events:none;
+}
+.int-marks{gap:0}
+.int-track .int-marks{padding:0}
+.int-logo{opacity:.72;transition:opacity .18s ease-out}
+.int-marks li:hover .int-logo{opacity:1}
+
+/* room between the marquee and the line under it */
+.int-marquee{margin-bottom:var(--s6)}
+.int-note{margin-top:var(--s6)}
+.integrations .int-title{margin-bottom:var(--s6)}
+
+/* A primary button always sits on the deep gradient, so its text is always
+   white. Section-level link colours were reaching it inside dark bands and
+   painting dark blue on dark blue. !important is deliberate: no context may
+   override the text colour of a button whose background is fixed. */
+.btn-primary,.btn-primary:hover,.btn-primary:focus,
+.sec-dark .btn-primary,.sec-lightblue .btn-primary{color:var(--ink-on-grad) !important}
+.btn-primary .ico{color:var(--ink-on-grad)}
+
+/* Eyebrow and role chips carry a translucent tint of their own, which drags
+   --blue-deep to 3.99 against it. One step darker clears AA on the chip. */
+.eyebrow,.role-tag,.sec-lightblue .eyebrow,.sec-dark :is(.card,.founder-card) .role-tag{color:#0B5372}
+.sec-dark .eyebrow{color:#8FE3FA}
