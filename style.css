@@ -1024,3 +1024,16 @@ a[href^="tel:"]{white-space:nowrap}
   .band .cta-col .btn{width:auto}
   .band .cta-col .micro{text-align:left}
 }
+
+/* Monochrome marks on a transparent ground, tinted to the design's own ink.
+   The plates are gone: they read as chips rather than a logo bar. */
+.int-marks li{background:none;border:0;padding:0;box-shadow:none}
+.int-marks li:hover{background:none}
+.int-logo{
+  height:30px;width:auto;display:block;
+  color:#4A4478;opacity:.72;
+  transition:color .16s ease-out,opacity .16s ease-out;
+}
+.int-marks li:hover .int-logo{color:var(--violet);opacity:1}
+@media(max-width:1100px){.int-logo{height:26px}}
+@media(max-width:720px){.int-logo{height:24px}}
