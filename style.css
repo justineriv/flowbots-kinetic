@@ -1906,11 +1906,11 @@ html .hiw-screen .k.ok{color:var(--good-text)}
    last in the file with (0,3,1) specificity so it wins every time.
    Add a new white component? Add it to this list.
    ============================================================ */
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(h2,h3,h4,b,strong){color:var(--ink)}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(p,li,td,figcaption,small){color:var(--muted)}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) span{color:var(--muted)}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) a{color:var(--blue-deep)}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(.tag,.cat,.cmp-tag,.role-tag,.q-tag,.sc-tag,.k){color:var(--blue-deep)}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) :is(h2,h3,h4,b,strong){color:var(--ink)}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) :is(p,li,td,figcaption,small){color:var(--muted)}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) span{color:var(--muted)}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) a{color:var(--blue-deep)}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) :is(.tag,.cat,.cmp-tag,.role-tag,.q-tag,.sc-tag,.k){color:var(--blue-deep)}
 .sec-dark :is(.card,.stat,.stat-detail) :is(.stat-label,.card-num,.num,.n){color:var(--ink)}
 .sec-dark :is(.stat,.stat-detail) :is(.stat-src,.src){color:var(--muted)}
 .sec-dark .hiw-screen .line .k.ok{color:var(--good-text)}
@@ -1929,7 +1929,7 @@ html .hiw-screen .k.ok{color:var(--good-text)}
    next step down so they clear AA on both grounds. */
 :root{--blue-link:#0B6D8C}
 a{color:var(--blue-link)}
-.sec-lightblue a,.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) a{color:var(--blue-link)}
+.sec-lightblue a,.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) a{color:var(--blue-link)}
 
 /* INTEGRATIONS — boxes off, logos sit on the ground with a star between them.
    The star is a trailing separator on every item rather than a between-items
@@ -1965,7 +1965,7 @@ a{color:var(--blue-link)}
 
 /* Eyebrow and role chips carry a translucent tint of their own, which drags
    --blue-deep to 3.99 against it. One step darker clears AA on the chip. */
-.eyebrow,.role-tag,.sec-lightblue .eyebrow,.sec-dark :is(.card,.founder-card) .role-tag{color:#0B5372}
+.eyebrow,.role-tag,.sec-lightblue .eyebrow,.sec-dark :is(.card) .role-tag{color:#0B5372}
 .sec-dark .eyebrow{color:#8FE3FA}
 
 /* ============================================================
@@ -1981,16 +1981,16 @@ a{color:var(--blue-link)}
   border-bottom:1px solid rgba(255,255,255,.09);
   color:#DCE9F3;
 }
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details,.faq-thread summary){
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col){
   background:rgba(255,255,255,.055);
   border:1px solid rgba(255,255,255,.13);
   box-shadow:none;
   color:#DCE9F3;
 }
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(h2,h3,h4,b,strong){color:#FFFFFF}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(p,li,td,span,figcaption,small){color:#C3D6E5}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) a{color:#8FE3FA}
-.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(.tag,.cat,.cmp-tag,.role-tag,.q-tag,.sc-tag,.k){color:#8FE3FA;background:rgba(143,227,250,.13)}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) :is(h2,h3,h4,b,strong){color:#FFFFFF}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) :is(p,li,td,span,figcaption,small){color:#C3D6E5}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) a{color:#8FE3FA}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col) :is(.tag,.cat,.role-tag,.q-tag,.sc-tag,.k){color:#8FE3FA}
 .sec-dark :is(.card,.stat,.stat-detail) :is(.stat-label,.card-num,.num,.n){color:#FFFFFF}
 .sec-dark :is(.stat,.stat-detail) :is(.stat-src,.src){color:#9DB6CB}
 .sec-dark .hiw-screen .line + .line{border-top-color:rgba(255,255,255,.12)}
@@ -2008,15 +2008,11 @@ a{color:var(--blue-link)}
 /* the assessment block was still on the old orange accent, so a white heading
    from the dark band landed on cream. Re-cut in the brand blue with its own
    text colours so no section rule can reach into it. */
-:root{ --warm:#38BADF; --warm-deep:#0B5372; --on-warm:#FFFFFF; }
-.band{
-  background:linear-gradient(120deg,rgba(56,186,223,.16),rgba(56,186,223,.05) 55%,transparent),#FFFFFF;
-  border:1px solid rgba(11,83,114,.28);border-left:4px solid var(--blue-bright);
-}
+:root{ --warm:#FB923C; --warm-deep:#C2410C; --on-warm:#FFFFFF; }
 .band,.band p,.band .micro{color:var(--muted)}
 .band h2,.band h3,.band h4{color:var(--ink)!important}
-.band h2::before,.band h3::before,.band h4::before{color:var(--warm-deep)}
-.sec-dark .band{background:#FFFFFF;border-color:rgba(11,83,114,.28)}
+
+.sec-dark .band{background:linear-gradient(120deg,rgba(251,146,60,.18),rgba(251,146,60,.06) 55%,transparent),#FFFFFF;border-color:rgba(194,65,12,.30);border-left-color:var(--warm)}
 .sec-dark .band :is(h2,h3,h4){color:var(--ink)!important}
 .sec-dark .band :is(p,span,li,.micro){color:var(--muted)!important}
 
@@ -2071,3 +2067,31 @@ a{color:var(--blue-link)}
 .sec-lightblue .cmp-col .cmp-tag,.sec-lightblue .cmp-col.good .cmp-tag,.sec-lightblue .cmp-col.bad .cmp-tag{color:#0B5372}
 /* the top float card sits on the deep gradient; full white clears 4.5 */
 .float-card.fc-top span{color:#FFFFFF}
+
+/* ---- Restoring what round 9 flattened ------------------------------------
+   The glass treatment belongs to the OUTER card only. .founder-card and the
+   FAQ <details> are containers that sit inside or around one, so giving them
+   a surface drew a box inside a box.                                        */
+.sec-dark .founder-card,.sec-dark .faq-thread details{
+  background:none;border:0;box-shadow:none;padding:0;
+}
+.sec-dark .faq-thread summary{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+
+/* The comparison columns keep their good/bad character on either ground. */
+.cmp-col.good{
+  background:linear-gradient(150deg,rgba(56,186,223,.14),rgba(30,159,198,.06) 60%,transparent),#FFFFFF;
+  border:1px solid rgba(56,186,223,.34);
+}
+.cmp-col.bad{background:#FFFFFF;border:1px solid var(--line)}
+.sec-dark .cmp-col.good{
+  background:linear-gradient(150deg,rgba(56,186,223,.20),rgba(30,159,198,.07) 60%,transparent),rgba(255,255,255,.04);
+  border:1px solid rgba(143,227,250,.38);
+}
+.sec-dark .cmp-col.bad{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)}
+.cmp-tag{background:none;padding:0;display:block;font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;margin-bottom:var(--s3)}
+
+/* CTA now sits inside the section, under the charts - no separate band, and
+   no gap left where the band used to be. */
+.cta-inline{text-align:center;margin:var(--s7) 0 0}
+.cta-inline .btn{margin:0 auto}
