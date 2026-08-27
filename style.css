@@ -1323,3 +1323,26 @@ section[style*="padding-top:0"]{padding-top:0!important}
   .fc-left{left:0;right:auto;bottom:var(--s6)}
   .fc-right{right:0;bottom:0}
 }
+
+/* ---- Dead space 1: How It Works step panel ----
+   .line was pinned to column 1 and .hiw-outcome auto-placed into row 1 of
+   column 2, leaving rows 2-4 of that column empty. That hole is what Justine
+   boxed in red. The outcome card now spans the full height beside the lines. */
+.hiw-screen .sc-tag{grid-column:1}
+.hiw-outcome{grid-column:2;grid-row:1 / span 4;align-self:stretch;display:flex;
+  flex-direction:column;justify-content:center}
+@media(max-width:860px){
+  .hiw-outcome{grid-column:1;grid-row:auto;align-self:auto}
+}
+
+/* ---- Dead space 2: CTA strips ----
+   p was flex:1 1 auto but capped at 46ch, so it stopped growing and the
+   button's margin-left:auto had nothing left to push against. The button
+   landed mid-row with roughly 300px of nothing to its right. */
+.cta-strip-inner{justify-content:space-between;gap:var(--s6)}
+.cta-strip p{max-width:64ch;flex:1 1 auto}
+.cta-strip .btn{margin-left:0}
+
+/* ---- Proof photo band, now sitting directly under the value strip ---- */
+.photo-band{padding-top:var(--s7);padding-bottom:var(--s7)}
+.photo-band .bleed{margin-top:0;margin-bottom:0}
