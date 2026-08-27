@@ -976,3 +976,51 @@ a[href^="tel:"]{white-space:nowrap}
   .int-marks{gap:var(--s4) var(--s5)}
   .int-marks li{font-size:.94rem}
 }
+
+/* Single row, full width, using FlowBots' own integration marks.
+   Scrolls horizontally rather than wrapping when space runs out. */
+.integrations .wrap{max-width:1500px}
+.int-marks{
+  display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;
+  gap:var(--s5);margin:0 0 var(--s5);overflow-x:auto;scrollbar-width:none;
+  padding-bottom:2px;
+}
+.int-marks::-webkit-scrollbar{display:none}
+.int-marks li{flex:0 0 auto;display:flex;align-items:center}
+.int-marks img{
+  height:30px;width:auto;display:block;
+  opacity:.82;transition:opacity .16s ease-out,transform .16s ease-out;
+}
+.int-marks li:hover img{opacity:1;transform:translateY(-1px)}
+@media(max-width:1100px){.int-marks{justify-content:flex-start;gap:var(--s6)}.int-marks img{height:26px}}
+@media(max-width:720px){
+  .integrations .wrap{padding-right:0}
+  .int-marks{gap:var(--s5)}
+  .int-marks img{height:24px}
+}
+
+/* The 22ch cap I put on the heading forced a wrap the column was wide enough
+   to avoid, and the right column was too narrow, breaking the microcopy into
+   three ragged lines. Give the ask a proper column and let the heading run. */
+.band{
+  grid-template-columns:1fr minmax(280px,320px);
+  align-items:center;
+  gap:var(--s7);
+  padding:var(--s7);
+}
+.band h2,.band h3,.band h4{
+  max-width:none;font-size:clamp(1.3rem,2.2vw,1.75rem);
+  line-height:1.18;margin-bottom:var(--s3);
+}
+.band > div:first-child p{max-width:46ch;margin-bottom:0}
+.band .cta-col{text-align:center}
+.band .cta-col .btn{width:100%;justify-content:center}
+.band .cta-col .micro{
+  max-width:none;margin:var(--s3) 0 0;text-align:center;line-height:1.45;
+}
+@media(max-width:980px){
+  .band{grid-template-columns:1fr;gap:var(--s5);padding:var(--s6)}
+  .band .cta-col{text-align:left}
+  .band .cta-col .btn{width:auto}
+  .band .cta-col .micro{text-align:left}
+}
