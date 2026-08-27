@@ -703,7 +703,7 @@ section{position:relative}
 .sec-panel{background:var(--sec-panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
 /* 3 — grid: base ground carrying a faint dot matrix */
-.sec-grid{background:var(--bg)}
+.sec-grid{/* ground comes from the class beside it; this adds the dot field only */}
 .sec-grid::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background-image:radial-gradient(var(--sec-dot) 1px,transparent 1px);
@@ -729,7 +729,7 @@ section{position:relative}
 }
 
 /* 6 — rule: base ground with a hard accent rule along the top edge */
-.sec-rule{background:var(--bg);border-top:2px solid var(--violet)}
+.sec-rule{border-top:2px solid var(--violet)}
 .sec-rule::after{
   content:"";position:absolute;top:0;left:0;width:120px;height:2px;
   background:var(--violet);box-shadow:0 0 18px var(--violet);
@@ -1352,3 +1352,64 @@ section[style*="padding-top:0"]{padding-top:0!important}
    crop favours the upper half where the heads are. */
 .photo-band .bleed-figure{min-height:min(620px,46vw)}
 .photo-band .bleed-figure img{object-position:center 40%}
+
+/* ============================================================
+   Round 3 fixes
+   ============================================================ */
+
+/* 1 — Step panel. The 32px row gap between the four rows was the dead space:
+   four lines of content spread over 96px of nothing. Rows now sit tight with
+   a hairline between them; the column gap is untouched. */
+.hiw-screen{row-gap:0;column-gap:var(--s6)}
+.hiw-screen .line + .line{border-top:1px solid var(--line)}
+.hiw-screen .line{padding:var(--s4) 0}
+
+/* 2 — Sound Familiar: photo under the heading, filling the aside column that
+   was running short against the tall ledger beside it. */
+.aside-media{margin:var(--s6) 0 0;border-radius:18px;overflow:hidden;
+  box-shadow:0 18px 44px rgba(40,30,110,.14)}
+.aside-media img{display:block;width:100%;height:auto}
+
+/* 3 — What We Build: four services as one bordered grid rather than four
+   floating cards, with the photograph held beside them. */
+.build-split{display:grid;grid-template-columns:1.32fr .68fr;gap:var(--s7);align-items:stretch}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;background:var(--line);
+  gap:1px;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.svc-cell{background:#fff;padding:var(--s6);display:flex;flex-direction:column}
+.svc-cell h3{font-size:1.12rem;margin:var(--s3) 0 var(--s2)}
+.svc-cell p{font-size:.94rem;margin-bottom:var(--s3)}
+.svc-cell ul{margin:auto 0 0;padding:0;list-style:none;font-size:.88rem;color:var(--muted)}
+.svc-cell ul li{padding:5px 0 5px 18px;position:relative}
+.svc-cell ul li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;
+  border-radius:50%;background:var(--grad-deep)}
+.build-media{margin:0;border-radius:22px;overflow:hidden;position:relative;min-height:100%;
+  box-shadow:0 20px 50px rgba(40,30,110,.16)}
+.build-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* 4 — ladder under the Three Steps header */
+.head-icon{display:flex;justify-content:center;margin-top:var(--s5)}
+.section-head:not(.center) .head-icon{justify-content:flex-start}
+.head-icon .ico{width:40px;height:40px;color:var(--violet);opacity:.9}
+
+/* 5 — What the Data Says: rule between the headline figures and the detail
+   cards, so the two number sets read as two groups. */
+.stat-grid + .grid-3{border-top:1px solid var(--line);padding-top:var(--s7);margin-top:var(--s7)}
+
+@media(max-width:980px){
+  .build-split{grid-template-columns:1fr}
+  .build-media{min-height:280px}
+}
+@media(max-width:640px){
+  .svc-grid{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   GROUNDS — the standing defect Justine has flagged repeatedly.
+   --sec-panel was #FFFFFF, identical to --bg, so .sec-panel,
+   .sec-plain and .sec-grid were all the same white. Three of the
+   seven "grounds" were one ground, which is why long runs of the
+   page read as a single uninterrupted white sheet.
+   ============================================================ */
+:root{--sec-panel:#F7F6FE}
+.sec-plain{background:var(--bg)}
+.sec-plain + .sec-plain{border-top:1px solid var(--line)}
