@@ -24,6 +24,18 @@
     }
   }
 
+
+  /* Real scrollbar width, so a full-bleed band can span the viewport without
+     100vw pushing the page wider than it and creating horizontal scroll. */
+  (function () {
+    var setSbw = function () {
+      var w = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty('--sbw', (w > 0 ? w : 0) + 'px');
+    };
+    setSbw();
+    window.addEventListener('resize', setSbw, { passive: true });
+  })();
+
   /* mobile nav */
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.mobile-menu');

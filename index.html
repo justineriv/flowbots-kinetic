@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=28">
+<link rel="stylesheet" href="style.css?v=30">
 <script>/* These are the animated designs: motion is on unless a URL explicitly
    asks for ?motion=off. A production build should restore respect for
    prefers-reduced-motion; this is a review prototype. */
@@ -165,25 +165,27 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 <!-- ============ PROBLEMS ============ -->
 <section class="sec-grid">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Sound Familiar?</span>
-      <h2>The Problems Costing You Money <span class="grad-text">Every Day</span></h2>
-    </div>
-    <div class="grid-3">
-      <div class="card reveal">
-        <span class="card-num">01</span>
-        <h3>“We're Losing Leads Because We Can't Call Back Fast Enough”</h3>
-        <p>By the time your team responds, the prospect already hired someone else. The first business to respond wins 78% of the time.</p>
+    <div class="split">
+      <div class="split-aside">
+        <span class="eyebrow">Sound Familiar?</span>
+        <h2>The Problems Costing You Money <span class="grad-text">Every Day</span></h2>
+        <p>These three come up in almost every discovery call we run.</p>
       </div>
-      <div class="card reveal">
-        <span class="card-num">02</span>
-        <h3>“My Best People Are Stuck Doing Data Entry Instead of Selling”</h3>
-        <p>You're paying high salaries for low-value work. 57% of U.S. work hours are automatable with technology that exists right now.</p>
-      </div>
-      <div class="card reveal">
-        <span class="card-num">03</span>
-        <h3>“Nothing Talks to Anything Else”</h3>
-        <p>You log into five different systems just to see what happened today. Your team wastes hours manually moving information between tools that don't connect.</p>
+      <div class="split-body">
+        <div class="ledger">
+        <div class="ledger-row reveal">
+          <span class="ledger-n">01</span>
+          <div><h3>“We're Losing Leads Because We Can't Call Back Fast Enough”</h3><p>By the time your team responds, the prospect already hired someone else. The first business to respond wins 78% of the time.</p></div>
+        </div>
+        <div class="ledger-row reveal">
+          <span class="ledger-n">02</span>
+          <div><h3>“My Best People Are Stuck Doing Data Entry Instead of Selling”</h3><p>You're paying high salaries for low-value work. 57% of U.S. work hours are automatable with technology that exists right now.</p></div>
+        </div>
+        <div class="ledger-row reveal">
+          <span class="ledger-n">03</span>
+          <div><h3>“Nothing Talks to Anything Else”</h3><p>You log into five different systems just to see what happened today. Your team wastes hours manually moving information between tools that don't connect.</p></div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -260,12 +262,14 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
         <div class="line"><span class="k">DISCOVERY.CALL</span><span>30-minute workflow mapping session complete</span></div>
         <div class="line"><span class="k">AUDIT.WORKFLOWS</span><span>17 manual processes documented, 9 automatable</span></div>
         <div class="line"><span class="k ok">ROADMAP.READY</span><span>Top 3 opportunities identified by projected ROI</span></div>
+        <div class="hiw-outcome"><b>17 processes</b><span>documented in the first session</span></div>
       </div>
       <div class="hiw-screen" data-hiw-screen style="display:none">
         <span class="sc-tag">Step 2 · Build</span>
         <div class="line"><span class="k">BUILD.VOICE</span><span>Trained on your scheduling rules and business logic</span></div>
         <div class="line"><span class="k">INTEGRATE.CRM</span><span>ServiceTitan + QuickBooks + Google Calendar connected</span></div>
         <div class="line"><span class="k ok">TESTS.PASSED</span><span>Rigorous QA before a single live call</span></div>
+        <div class="hiw-outcome"><b>4–8 weeks</b><span>from kickoff to live</span></div>
       </div>
       <div class="hiw-screen" data-hiw-screen style="display:none">
         <span class="sc-tag">Step 3 · Launch</span>
@@ -463,6 +467,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
     <p>Run these numbers against your own workflows and see what comes back.</p>
     <a class="btn btn-primary" href="#assessment" data-track="cta-strip-roi">Get My Free Assessment</a>
   </div>
+  <div class="hiw-outcome"><b>17 processes</b><span>documented in the first session</span></div>
 </div>
 
 <!-- ============ NOT A $99 CHATBOT ============ -->
@@ -622,6 +627,17 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 <!-- ============ WHO WE ARE ============ -->
 <section class="sec-panel">
   <div class="wrap">
+    <figure class="bleed" style="margin-bottom:var(--s8)">
+      <div class="bleed-figure">
+        <img src="images/team-oleary.jpg" alt="The FlowBots team with Kevin O'Leary" decoding="async" onerror="this.remove()">
+        <div class="img-slot" aria-hidden="true">Team photo &mdash; images/team-oleary.jpg</div>
+        <figcaption class="bleed-caption">
+          <b>Working with Kevin O'Leary to Automate One of His Companies</b>
+          <span>The team that builds and runs every system we ship.</span>
+        </figcaption>
+      </div>
+    </figure>
+
     <div class="section-head reveal">
       <span class="eyebrow">Who We Are</span>
       <h2>Built by People Who've <span class="grad-text">Done This Before</span></h2>
@@ -682,31 +698,31 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
         <summary><span class="q-tag">Services</span>What exactly do you build?</summary>
         <div class="faq-a">Custom AI systems designed around your specific workflows. If a human in your company does it on a keyboard or phone, we can probably automate it. Common builds: AI voice agents, SMS follow-up systems, CRM automation, compliance workflows, dispatching, payroll processing, and multi-channel communication systems.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">Pricing</span>How much does it cost?</summary>
         <div class="faq-a">Projects range from $15,000 to $300,000 depending on scope. Pilot projects start at $15,000. AI voice usage is billed at $0.25/minute of actual call time. We give you a fixed-price quote before any work begins — no surprises.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">Timeline</span>How long does it take?</summary>
         <div class="faq-a">Most projects take 4–8 weeks. Complex enterprise builds take 8–16 weeks. We'll give you a clear timeline during your discovery call.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">Integrations</span>What systems do you integrate with?</summary>
         <div class="faq-a">30+ platforms including ServiceTitan, Salesforce, HubSpot, GoHighLevel, Dentrix, Mindbody, Boulevard, Clio, and more. If your system has an API, we can connect to it. Custom integrations are included in project scope.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">Security</span>Is this HIPAA compliant?</summary>
         <div class="faq-a">Yes. We maintain Business Associate Agreements with all AI providers, enforce HIPAA protocols, and hold SOC 2 Type II certification with annual independent security audits.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">General</span>Will AI replace my employees?</summary>
         <div class="faq-a">No. AI handles the repetitive tasks your team shouldn't be doing — answering phones, entering data, sending follow-ups. Your team focuses on complex problem-solving, relationship building, and strategic work that requires a human.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">Guarantee</span>What if it doesn't work?</summary>
         <div class="faq-a">Every project starts with a fixed-price proposal. You know exactly what you're paying before any work begins. No surprise invoices, no scope creep charges. And your data and workflows are always yours — the code, the automations, the integrations. It's yours.</div>
       </details>
-      <details>
+      <details open>
         <summary><span class="q-tag">Getting Started</span>How do I get started?</summary>
         <div class="faq-a">Book a free discovery call. We'll spend 30 minutes mapping your current workflows, identifying automation opportunities, and showing you exactly what's possible. No pressure. No sales pitch.</div>
       </details>
@@ -864,6 +880,6 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 })();
 </script>
 
-<script src="app.js?v=28"></script>
+<script src="app.js?v=30"></script>
 </body>
 </html>
