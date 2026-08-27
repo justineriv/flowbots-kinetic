@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=30">
+<link rel="stylesheet" href="style.css?v=32">
 <script>/* These are the animated designs: motion is on unless a URL explicitly
    asks for ?motion=off. A production build should restore respect for
    prefers-reduced-motion; this is a review prototype. */
@@ -58,18 +58,52 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
   <div class="hero-fx" aria-hidden="true"><span class="fx-light fx-1"></span><span class="fx-light fx-2"></span><svg class="hero-flow" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="flow-line" pathLength="100" d="M-40 120 C 220 90, 380 210, 620 190 S 1000 120, 1260 160"/><path class="flow-line" pathLength="100" d="M-40 250 C 260 230, 420 340, 700 300 S 1030 250, 1260 285"/><path class="flow-line" pathLength="100" d="M-40 380 C 200 400, 430 300, 660 380 S 1020 430, 1260 390"/><path class="flow-line" pathLength="100" d="M-40 500 C 240 520, 470 430, 720 480 S 1040 540, 1260 500"/><path class="flow-line" pathLength="100" d="M-40 60  C 300 40, 520 140, 780 100 S 1060 60, 1260 90"/><path class="flow-pulse p1" pathLength="100" d="M-40 120 C 220 90, 380 210, 620 190 S 1000 120, 1260 160"/><path class="flow-pulse p2" pathLength="100" d="M-40 250 C 260 230, 420 340, 700 300 S 1030 250, 1260 285"/><path class="flow-pulse p3" pathLength="100" d="M-40 380 C 200 400, 430 300, 660 380 S 1020 430, 1260 390"/><path class="flow-pulse p4" pathLength="100" d="M-40 500 C 240 520, 470 430, 720 480 S 1040 540, 1260 500"/><path class="flow-pulse p5" pathLength="100" d="M-40 60  C 300 40, 520 140, 780 100 S 1060 60, 1260 90"/></svg></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">Custom AI Automation for Every Industry</span>
-      <h1>We Automate the Work Your Team <span class="grad-text">Shouldn't Be Doing</span></h1>
-      <p class="lede">We build custom AI automation for businesses like yours. From answering calls and following up on leads to processing invoices, running onboarding, managing payroll, and operating your entire business — if your team does it on a keyboard or phone, we build the AI that handles it 24/7.</p>
+      <p class="trustline">
+        <span class="trust-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        Built for Healthcare, Home Services, Legal &amp; 25+ Industries
+      </p>
+      <h1>We Automate the Work Your Team <em class="grad-text">Shouldn't Be Doing</em></h1>
+      <p class="lede">If your team does it on a keyboard or a phone, we build the AI that handles it 24/7 — calls answered, leads followed up, invoices processed, CRM updated.</p>
       <div class="cta-row">
         <a class="btn btn-primary btn-lg" href="https://www.flowbots.ai/book-call/" data-track="cta-book">Book My Free Discovery Call</a>
-        <a class="btn btn-ghost btn-lg" href="pricing.html">See How It Works</a>
+        <a class="btn-text" href="pricing.html">See how it works</a>
       </div>
       <p class="micro">30 minutes. Free. No pressure. No sales pitch.</p>
-      <p class="hero-trust"><b>Built for Healthcare, Home Services, Legal &amp; 25+ Industries</b><span class="trust-chips"><span><svg class="ico" aria-hidden="true"><use href="#i-shield"></use></svg>HIPAA Compliant</span><span><svg class="ico" aria-hidden="true"><use href="#i-lock"></use></svg>SOC 2 Certified</span><span><svg class="ico" aria-hidden="true"><use href="#i-puzzle"></use></svg>Custom-Built AI</span><span><a href="tel:+15047174837" data-track="tel-click"><svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg>(504) 717-4837</a></span></span></p>
     </div>
 
-    <div class="panel" aria-label="Live AI operations feed (illustrative)">
+    <div class="hero-media">
+      <div class="hero-photo">
+        <img src="images/hero.jpg" alt="" decoding="async" onerror="this.remove()">
+        <div class="img-slot" aria-hidden="true">Hero photo &mdash; images/hero.jpg &middot; portrait 3:4</div>
+      </div>
+      <div class="float-card fc-top">
+        <b>&lt;1s</b><span>Answer time, day or night</span>
+      </div>
+      <div class="float-card fc-left">
+        <b>1,247</b><span>Calls handled today</span>
+      </div>
+      <div class="float-card fc-right">
+        <span class="fc-badges">
+          <svg class="ico" aria-hidden="true"><use href="#i-shield"></use></svg>HIPAA
+          <svg class="ico" aria-hidden="true"><use href="#i-lock"></use></svg>SOC 2
+        </span>
+        <span>Compliant and certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIVE OPERATIONS ============ -->
+<section class="sec-panel" id="live-ops">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-aside">
+        <span class="eyebrow">Live Operations</span>
+        <h2>What it looks like running</h2>
+        <p>Every row here is work your team no longer does by hand.</p>
+      </div>
+      <div class="split-body">
+        <div class="panel" aria-label="Live AI operations feed (illustrative)">
       <div class="panel-bar">
         <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
         <span class="addr">flowbots.ai / ai-operations-center</span>
@@ -88,6 +122,8 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
         <div><b class="countup" data-target="384">0</b><span>SMS convos</span></div>
         <div><b class="countup" data-target="89">0</b><span>Tasks automated</span></div>
         <div><b class="countup" data-target="6">0</b><span>Systems synced</span></div>
+      </div>
+    </div>
       </div>
     </div>
   </div>
@@ -880,6 +916,6 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 })();
 </script>
 
-<script src="app.js?v=30"></script>
+<script src="app.js?v=32"></script>
 </body>
 </html>

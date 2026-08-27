@@ -1231,3 +1231,95 @@ section[style*="padding-top:0"]{padding-top:0!important}
   margin-right:calc(50% - (100vw - var(--sbw, 0px)) / 2);
   max-width:none;
 }
+
+/* ============================================================
+   HERO — rebuilt to the reference composition.
+   Split roughly in half: copy left, a photograph right with
+   cards floating over its edges. The dashboard panel that used
+   to sit here moved to its own section below; it was the most
+   live-site-like element above the fold.
+   ============================================================ */
+.hero-grid{grid-template-columns:1fr 1fr;gap:var(--s8);align-items:center}
+
+.trustline{
+  display:flex;align-items:center;gap:var(--s3);
+  font-size:.9rem;font-weight:600;color:var(--muted);margin-bottom:var(--s5);
+}
+.trust-dots{display:inline-flex}
+.trust-dots i{
+  width:26px;height:26px;border-radius:50%;display:block;
+  border:2px solid var(--bg);background:var(--grad-deep);
+}
+.trust-dots i + i{margin-left:-10px}
+.trust-dots i:nth-child(2){background:linear-gradient(140deg,#38BADF,#5B4BD6)}
+.trust-dots i:nth-child(3){background:linear-gradient(140deg,#C86DD7,#5B4BD6)}
+
+.hero h1{
+  font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.04;letter-spacing:-.03em;
+  margin-bottom:var(--s5);
+}
+.hero .lede{font-size:1.06rem;max-width:46ch;margin-bottom:var(--s6)}
+.btn-text{
+  font-family:var(--font-display);font-weight:600;font-size:1rem;
+  color:var(--ink);text-decoration:none;padding:15px 4px;
+  border-bottom:2px solid transparent;
+}
+.btn-text:hover{border-bottom-color:var(--violet);text-decoration:none}
+
+/* the photograph, with cards breaking its edges */
+.hero-media{position:relative;padding:0 var(--s6) var(--s7) 0}
+.hero-photo{
+  position:relative;aspect-ratio:4/3;border-radius:26px;overflow:hidden;
+  background:var(--bg-2);box-shadow:0 30px 70px rgba(40,30,110,.18);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-photo .img-slot{position:absolute;inset:0;border-radius:26px}
+
+.float-card{
+  position:absolute;z-index:3;background:#fff;border:1px solid var(--line);
+  border-radius:16px;padding:var(--s4) var(--s5);
+  box-shadow:0 18px 40px rgba(40,30,110,.16);
+}
+.float-card b{
+  display:block;font-family:var(--font-display);font-size:1.5rem;line-height:1.1;
+  background:var(--grad-deep);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.float-card span{display:block;font-size:.8rem;color:var(--muted);margin-top:2px}
+.fc-top{top:var(--s5);right:0;background:var(--grad-deep);border-color:transparent}
+.fc-top b{background:none;-webkit-text-fill-color:#fff;color:#fff}
+.fc-top span{color:rgba(255,255,255,.86)}
+.fc-left{left:calc(-1 * var(--s5));bottom:0}
+.fc-right{right:var(--s6);bottom:calc(-1 * var(--s4))}
+.fc-badges{
+  display:flex;align-items:center;gap:6px;font-family:var(--font-display);
+  font-weight:700;font-size:.9rem;color:var(--ink);margin-bottom:2px;
+}
+.fc-badges .ico{width:16px;height:16px;color:var(--violet)}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--s7)}
+  .hero-media{padding:0 var(--s5) var(--s6) var(--s5)}
+  .fc-left{left:0}
+  .fc-right{right:0}
+}
+@media(max-width:560px){
+  .float-card{padding:var(--s3) var(--s4)}
+  .float-card b{font-size:1.2rem}
+  .fc-top{top:var(--s4)}
+}
+
+/* The chosen hero image is portrait (about 2:3), so the slot follows it
+   rather than cropping the reach — the point of the shot is the two hands
+   meeting, and a 4:3 crop would cut it. The floating cards reposition to
+   suit a taller frame. */
+.hero-photo{aspect-ratio:3/4;max-height:560px;margin-left:auto;max-width:440px}
+.hero-media{padding:0 var(--s7) var(--s6) 0}
+.fc-top{top:var(--s6);right:0}
+.fc-left{left:auto;right:calc(100% - 150px);bottom:var(--s8)}
+.fc-right{right:var(--s7);bottom:0}
+@media(max-width:980px){
+  .hero-photo{margin:0 auto;max-width:360px}
+  .hero-media{padding:0 0 var(--s6)}
+  .fc-left{left:0;right:auto;bottom:var(--s6)}
+  .fc-right{right:0;bottom:0}
+}
