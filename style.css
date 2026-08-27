@@ -1741,3 +1741,83 @@ html .hiw-screen .k.ok{color:var(--good-text)}
 
 /* .hiw-screen .line .k.ok is (0,4,0); matching it exactly is what wins. */
 .hiw-screen .line .k.ok,.sec-dark .hiw-screen .line .k.ok{color:var(--good-text)}
+
+/* ============================================================
+   Round 7
+   ============================================================ */
+
+/* Hero secondary action: a real button, not a text link */
+.btn-secondary{
+  background:transparent;border:1.5px solid var(--line-2);color:var(--ink);
+}
+.btn-secondary:hover{border-color:var(--blue-deep);color:var(--blue-deep);
+  background:rgba(56,186,223,.07)}
+.sec-dark .btn-secondary{color:#FFFFFF;border-color:rgba(255,255,255,.42)}
+.sec-dark .btn-secondary:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
+
+/* WHAT THE DATA SAYS — the four headline figures now orbit a photograph
+   rather than sitting in a flat four-across row. */
+.stat-orbit{
+  display:grid;grid-template-columns:1fr minmax(240px,340px) 1fr;
+  gap:var(--s6) var(--s7);align-items:center;max-width:1040px;margin:0 auto;
+}
+.orbit-col{display:flex;flex-direction:column;gap:var(--s6);justify-content:center}
+.orbit-left{text-align:right;align-items:flex-end}
+.orbit-right{text-align:left;align-items:flex-start}
+.stat-orbit .stat{
+  background:none;border:0;padding:0;box-shadow:none;max-width:260px;
+}
+.stat-orbit .stat b{
+  display:block;font-family:var(--font-display);font-weight:700;
+  font-size:clamp(2.1rem,3.6vw,3rem);line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat-orbit .stat .stat-label{display:block;font-weight:600;margin-top:8px;font-size:.98rem}
+.stat-orbit .stat .stat-src{display:block;font-size:.76rem;margin-top:4px}
+.orbit-media{
+  margin:0;border-radius:50%;overflow:hidden;aspect-ratio:1;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 30px 70px rgba(6,18,34,.45);
+}
+.orbit-media img{width:100%;height:100%;object-fit:cover;display:block}
+/* the ring of light behind the portrait ties it to the figures around it */
+.orbit-media::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  box-shadow:inset 0 0 0 1px rgba(143,227,250,.24);
+}
+.stat-orbit .orbit-media{position:relative}
+
+/* on a dark band these figures sit directly on the ground, not in a card */
+.sec-dark .stat-orbit .stat .stat-label{color:#FFFFFF}
+.sec-dark .stat-orbit .stat .stat-src{color:#93B3C8}
+
+@media(max-width:900px){
+  .stat-orbit{grid-template-columns:1fr 1fr;gap:var(--s6)}
+  .orbit-media{grid-column:1 / -1;grid-row:1;max-width:280px;margin:0 auto}
+  .orbit-left,.orbit-right{text-align:left;align-items:flex-start}
+}
+@media(max-width:560px){
+  .stat-orbit{grid-template-columns:1fr}
+}
+
+/* Founder quote sits above the two bios as a speech bubble, its tail pointing
+   down at their names. */
+.founder-bubble{
+  position:relative;max-width:860px;margin:0 auto var(--s8);
+  background:var(--surface);border:1px solid var(--line);border-radius:24px;
+  padding:var(--s7) var(--s7) var(--s6);
+  box-shadow:0 18px 44px rgba(10,50,80,.10);
+}
+.founder-bubble::after,.founder-bubble::before{
+  content:"";position:absolute;top:100%;left:50%;width:0;height:0;
+  border:18px solid transparent;border-top-color:var(--line);
+  transform:translateX(-50%);
+}
+.founder-bubble::before{border-top-color:var(--line)}
+.founder-bubble::after{border-width:17px;border-top-color:var(--surface);margin-top:-1.5px}
+.founder-bubble footer{
+  margin-top:var(--s4);font-size:.9rem;color:var(--muted);font-style:normal;
+}
+.sec-dark .founder-bubble{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)}
+.sec-dark .founder-bubble::before{border-top-color:rgba(255,255,255,.16)}
+.sec-dark .founder-bubble::after{border-top-color:#152a49}

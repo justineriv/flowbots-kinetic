@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=52">
+<link rel="stylesheet" href="style.css?v=55">
 <script>/* These are the animated designs: motion is on unless a URL explicitly
    asks for ?motion=off. A production build should restore respect for
    prefers-reduced-motion; this is a review prototype. */
@@ -66,7 +66,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
       <p class="lede">If your team does it on a keyboard or a phone, we build the AI that handles it 24/7 — calls answered, leads followed up, invoices processed, CRM updated.</p>
       <div class="cta-row">
         <a class="btn btn-primary btn-lg" href="https://www.flowbots.ai/book-call/" data-track="cta-book">Book My Free Discovery Call</a>
-        <a data-inert class="btn-text" href="pricing.html">See how it works</a>
+        <a data-inert class="btn btn-secondary btn-lg" href="pricing.html">See how it works</a>
       </div>
       <p class="micro">30 minutes. Free. No pressure. No sales pitch.</p>
     </div>
@@ -157,6 +157,10 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
       <span class="eyebrow">Who We Are</span>
       <h2>Built by People Who've <span class="grad-text">Done This Before</span></h2>
     </div>
+    <blockquote class="quote founder-bubble reveal">
+      “We started FlowBots because we saw businesses spending thousands on tools that didn't talk to each other and teams buried in work that machines should handle. We build the systems that fix that.”
+      <footer>— Brian &amp; Hanson, Co-Founders</footer>
+    </blockquote>
     <div class="grid-2">
       <div class="card reveal">
         <div class="founder-card">
@@ -181,11 +185,6 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
         </div>
       </div>
     </div>
-
-    <blockquote class="quote mt-3 reveal">
-      “We started FlowBots because we saw businesses spending thousands on tools that didn't talk to each other and teams buried in work that machines should handle. We build the systems that fix that.”
-      <footer>— Brian &amp; Hanson, Co-Founders</footer>
-    </blockquote>
 
     <div class="grid-3 mt-3">
       <div class="card reveal"><h3>Fixed-Price Proposals</h3><p>You know exactly what you're paying before any work begins. No surprise invoices. No scope creep charges.</p></div>
@@ -233,6 +232,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
     </div>
       </div>
     </div>
+      <p class="center mt-3"><a class="btn btn-primary" href="https://calendly.com/flowbots/discovery" data-track="cta-liveops">See This Running in Your Business</a></p>
   </div>
 </section>
 
@@ -305,6 +305,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
           <div><h3>“Nothing Talks to Anything Else”</h3><p>You log into five different systems just to see what happened today. Your team wastes hours manually moving information between tools that don't connect.</p></div>
         </div>
         </div>
+        <p class="mt-3"><a class="btn btn-primary" href="#assessment" data-track="cta-problems">Show Me What This Costs Me</a></p>
       </div>
     </div>
   </div>
@@ -431,11 +432,18 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
       <h2>What AI Automation <span class="grad-text">Actually Delivers</span></h2>
       <p>These aren't hypotheticals. These are documented outcomes from businesses that automated the work your team is still doing by hand.</p>
     </div>
-    <div class="stat-grid reveal">
-      <div class="stat"><b class="countup" data-target="78" data-suffix="%">0%</b><span class="stat-label">Buy From First Responder</span><span class="stat-src">Lead Connect / InsideSales.com</span></div>
-      <div class="stat"><b class="countup" data-target="62" data-suffix="%">0%</b><span class="stat-label">Of Calls Go Unanswered</span><span class="stat-src">411 Locals · 2024 Study</span></div>
-      <div class="stat"><b class="countup" data-target="57" data-suffix="%">0%</b><span class="stat-label">Of Work Hours Automatable</span><span class="stat-src">McKinsey · 2025</span></div>
-      <div class="stat"><b class="countup" data-target="3.50" data-prefix="$">$0</b><span class="stat-label">Return per $1 in AI</span><span class="stat-src">IBM · 2024</span></div>
+    <div class="stat-orbit reveal">
+      <div class="orbit-col orbit-left">
+        <div class="stat"><b class="countup" data-target="78" data-suffix="%">0%</b><span class="stat-label">Buy From First Responder</span><span class="stat-src">Lead Connect / InsideSales.com</span></div>
+        <div class="stat"><b class="countup" data-target="57" data-suffix="%">0%</b><span class="stat-label">Of Work Hours Automatable</span><span class="stat-src">McKinsey · 2025</span></div>
+      </div>
+      <figure class="orbit-media">
+        <img src="images/data-handshake.jpg" alt="" width="760" height="760" loading="lazy" decoding="async" onerror="this.closest('figure').remove()">
+      </figure>
+      <div class="orbit-col orbit-right">
+        <div class="stat"><b class="countup" data-target="62" data-suffix="%">0%</b><span class="stat-label">Of Calls Go Unanswered</span><span class="stat-src">411 Locals · 2024 Study</span></div>
+        <div class="stat"><b class="countup" data-target="3.50" data-prefix="$">$0</b><span class="stat-label">Return per $1 in AI</span><span class="stat-src">IBM · 2024</span></div>
+      </div>
     </div>
     <div class="grid-3 mt-3">
       <div class="stat-detail reveal"><span class="tag">Revenue on the Table</span><b class="n">$1,200</b><h4>Per Missed Call · Home Services</h4><p>Home service businesses miss 27% of inbound calls, and each one costs roughly $1,200 in lost revenue. 85% of callers who reach voicemail never call back — they call your competitor instead.</p><span class="src">Source: Invoca 2024 · BrightLocal</span></div>
@@ -925,6 +933,6 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 })();
 </script>
 
-<script src="app.js?v=52"></script>
+<script src="app.js?v=55"></script>
 </body>
 </html>
