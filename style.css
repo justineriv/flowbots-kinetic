@@ -1967,3 +1967,107 @@ a{color:var(--blue-link)}
    --blue-deep to 3.99 against it. One step darker clears AA on the chip. */
 .eyebrow,.role-tag,.sec-lightblue .eyebrow,.sec-dark :is(.card,.founder-card) .role-tag{color:#0B5372}
 .sec-dark .eyebrow{color:#8FE3FA}
+
+/* ============================================================
+   Round 9 — cohesion on the dark bands
+   The alternation put white cards on dark grounds, which is where every
+   invisible-text failure came from and why the page stopped feeling like one
+   design. Dark bands now use a solid ground and glass components, so there is
+   no light-surface-on-dark-ground contradiction left to get wrong.
+   ============================================================ */
+.sec-dark{
+  background:#0E2439;              /* solid: no gradient, nothing to mis-composite */
+  border-top:1px solid rgba(255,255,255,.09);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  color:#DCE9F3;
+}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details,.faq-thread summary){
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.13);
+  box-shadow:none;
+  color:#DCE9F3;
+}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(h2,h3,h4,b,strong){color:#FFFFFF}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(p,li,td,span,figcaption,small){color:#C3D6E5}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) a{color:#8FE3FA}
+.sec-dark :is(.card,.stat,.stat-detail,.post-card,.hiw-screen,.cmp-col,.founder-card,details) :is(.tag,.cat,.cmp-tag,.role-tag,.q-tag,.sc-tag,.k){color:#8FE3FA;background:rgba(143,227,250,.13)}
+.sec-dark :is(.card,.stat,.stat-detail) :is(.stat-label,.card-num,.num,.n){color:#FFFFFF}
+.sec-dark :is(.stat,.stat-detail) :is(.stat-src,.src){color:#9DB6CB}
+.sec-dark .hiw-screen .line + .line{border-top-color:rgba(255,255,255,.12)}
+.sec-dark .hiw-screen .line .k.ok{color:#4FD3A4}
+.sec-dark .cmp-col .x{color:#FF8FA6}
+.sec-dark table th{background:rgba(255,255,255,.06);color:#8FE3FA}
+.sec-dark table td{border-top-color:rgba(255,255,255,.11);color:#DCE9F3}
+.sec-dark table td:first-child{color:#FFFFFF}
+.sec-dark .avatar{background:var(--grad-deep);color:#FFFFFF}
+/* inline style="color:var(--ink)" on emphasis inside dark copy */
+.sec-dark p strong[style],.sec-dark p b[style]{color:#FFFFFF!important}
+.sec-dark .src-note,.sec-dark .muted{color:#9DB6CB}
+.sec-dark .btn-ghost{color:#FFFFFF;border-color:rgba(255,255,255,.42)}
+
+/* the assessment block was still on the old orange accent, so a white heading
+   from the dark band landed on cream. Re-cut in the brand blue with its own
+   text colours so no section rule can reach into it. */
+:root{ --warm:#38BADF; --warm-deep:#0B5372; --on-warm:#FFFFFF; }
+.band{
+  background:linear-gradient(120deg,rgba(56,186,223,.16),rgba(56,186,223,.05) 55%,transparent),#FFFFFF;
+  border:1px solid rgba(11,83,114,.28);border-left:4px solid var(--blue-bright);
+}
+.band,.band p,.band .micro{color:var(--muted)}
+.band h2,.band h3,.band h4{color:var(--ink)!important}
+.band h2::before,.band h3::before,.band h4::before{color:var(--warm-deep)}
+.sec-dark .band{background:#FFFFFF;border-color:rgba(11,83,114,.28)}
+.sec-dark .band :is(h2,h3,h4){color:var(--ink)!important}
+.sec-dark .band :is(p,span,li,.micro){color:var(--muted)!important}
+
+/* CTA strips: button only, centred */
+.cta-strip-inner{justify-content:center}
+.cta-strip{padding:var(--s6) 0;text-align:center}
+.sec-dark + .cta-strip,.cta-strip{background:var(--bg-2)}
+
+/* source lines centred */
+.src-note{text-align:center;max-width:70ch;margin-left:auto;margin-right:auto}
+
+/* orbit figures sit on the ground, no card */
+.stat-orbit .stat{background:none!important;border:0!important;box-shadow:none!important;padding:0!important}
+
+/* every logo carries a leading star, so the separator is uniform around the
+   loop and the first logo is not the odd one out */
+.int-marks li::after{content:none}
+.int-marks li::before{
+  content:"\2726";position:absolute;left:calc(var(--s5) * -0.5);top:50%;
+  transform:translate(-50%,-50%);font-size:.62rem;line-height:1;
+  color:var(--blue-bright);opacity:.55;pointer-events:none;
+}
+
+/* two tails: one under each founder card */
+.founder-bubble::before,.founder-bubble::after{content:none}
+.founder-bubble .tail{position:absolute;top:100%;width:0;height:0;
+  border:18px solid transparent;border-bottom:0;border-top-color:#FFFFFF;
+  filter:drop-shadow(0 1px 0 rgba(10,22,40,.10));}
+.founder-bubble .tail-a{left:24%}
+.founder-bubble .tail-b{left:76%}
+.sec-dark .founder-bubble{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.13)}
+.sec-dark .founder-bubble .tail{border-top-color:#182F47}
+.sec-dark .founder-bubble,.sec-dark .founder-bubble p{color:#FFFFFF}
+.sec-dark .founder-bubble footer{color:#B6CFE0}
+
+/* last two: float-card caption at 4.10 and the comparison tag at 4.43 */
+.float-card span{color:#3E5C76}
+.cmp-tag,.cmp-col.good .cmp-tag,.sec-lightblue .cmp-tag{color:#0B5372}
+
+/* Both of these elements exist in a light AND a dark variant, so a blanket
+   colour breaks whichever one it was not written for. Scoped by context. */
+.float-card.fc-top span{color:rgba(255,255,255,.92)}
+.float-card.fc-top b{color:#FFFFFF}
+.cmp-col.good .cmp-tag{color:#8FE3FA}
+.cmp-col:not(.good) .cmp-tag{color:#0B5372}
+
+/* The comparison tag's readability is decided by the SECTION GROUND, not by
+   whether the column is the good or the bad one. Keying it off .good/.bad put
+   dark text on the dark band and light text on the light band at the same
+   time. Ground is the only axis that matters here. */
+.sec-dark .cmp-col .cmp-tag,.sec-dark .cmp-col.good .cmp-tag,.sec-dark .cmp-col.bad .cmp-tag{color:#8FE3FA}
+.sec-lightblue .cmp-col .cmp-tag,.sec-lightblue .cmp-col.good .cmp-tag,.sec-lightblue .cmp-col.bad .cmp-tag{color:#0B5372}
+/* the top float card sits on the deep gradient; full white clears 4.5 */
+.float-card.fc-top span{color:#FFFFFF}
