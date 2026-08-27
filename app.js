@@ -269,3 +269,12 @@
   list.addEventListener('click', function(){ setTimeout(sync, 0); });
   sync();
 })();
+
+/* Homepage-only presentation: the other templates are not being shown yet, so
+   their links are inert. The href stays on the element - nothing has to be
+   rebuilt to turn them back on, just delete this block and the CSS rule. */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[data-inert]');
+  if (!a) return;
+  e.preventDefault();
+}, true);

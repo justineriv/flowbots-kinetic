@@ -1537,3 +1537,50 @@ section[style*="padding-top:0"]{padding-top:0!important}
    is for numbers sitting on the dark ground. */
 .sec-dark .card .card-num,.sec-dark .card .num,
 .sec-dark .stat-detail .n{color:var(--violet)}
+
+/* ============================================================
+   Round 5
+   ============================================================ */
+
+/* 6 -- top banner carries more weight now that it is down to two claims */
+.topbar{font-size:.92rem;padding:14px 0;letter-spacing:.01em}
+.topbar .sep{margin:0 16px}
+@media(max-width:640px){.topbar{font-size:.82rem;padding:11px 0}}
+
+/* 1 -- integration marks scroll instead of wrapping onto a second row */
+.int-marquee{overflow:hidden;position:relative;
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.int-track{display:flex;width:max-content}
+html.motion-on .int-track{animation:int-scroll 42s linear infinite}
+.int-track .int-marks{flex-wrap:nowrap;justify-content:flex-start;margin:0;padding:0 6px}
+.int-marquee:hover .int-track{animation-play-state:paused}
+@keyframes int-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){
+  html:not(.motion-on) .int-track{animation:none}
+  html:not(.motion-on) .int-marquee{overflow-x:auto}
+}
+
+/* 3 -- Live Operations: heading centred above the console */
+.stacked-mid{display:block}
+.stacked-mid .section-head{margin-left:auto;margin-right:auto;max-width:640px}
+.stacked-body{max-width:900px;margin:0 auto}
+
+/* 2 -- the O'Leary photo was running the full bleed at 620px tall, which made
+   it the loudest thing on the page. It sits inside the column now. */
+.photo-band .bleed{
+  width:auto;margin-left:auto;margin-right:auto;max-width:920px;
+}
+.photo-band .bleed-figure{min-height:0;aspect-ratio:16/9;border-radius:22px}
+.photo-band .bleed-caption{padding:var(--s7) var(--s6) var(--s5)}
+.photo-band .bleed-caption b{font-size:clamp(1.1rem,1.9vw,1.5rem)}
+.photo-band .bleed-caption span{font-size:.9rem;margin-top:var(--s2)}
+
+/* step panel: the readout column was 446px holding one short line. */
+.hiw-screen{grid-template-columns:1fr auto;padding:26px 30px;min-height:0}
+.hiw-outcome{padding-left:var(--s5)}
+.hiw-outcome b{font-size:1.35rem}
+.hiw-outcome span{font-size:.82rem}
+
+
+/* 7 -- inert links still read as links; only the navigation is blocked */
+a[data-inert]{cursor:default}
