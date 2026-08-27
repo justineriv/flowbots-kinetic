@@ -251,3 +251,21 @@
     onScroll();
   }
 })();
+
+/* Progress bar under the industry tabs: mirrors the active tab's position.
+   Written as its own listener so it cannot disturb the tab logic above. */
+(function(){
+  var list = document.querySelector('[data-tabs="industries"]');
+  var bar  = list && list.parentElement.querySelector('.tab-progress i');
+  if (!list || !bar) return;
+  function sync(){
+    var tabs = list.querySelectorAll('.tab');
+    if (!tabs.length) return;
+    var i = 0;
+    for (var t = 0; t < tabs.length; t++){ if (tabs[t].classList.contains('active')) i = t; }
+    bar.style.width = (100 / tabs.length) + '%';
+    bar.style.transform = 'translateX(' + (i * 100) + '%)';
+  }
+  list.addEventListener('click', function(){ setTimeout(sync, 0); });
+  sync();
+})();

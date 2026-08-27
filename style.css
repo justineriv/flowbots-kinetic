@@ -1413,3 +1413,127 @@ section[style*="padding-top:0"]{padding-top:0!important}
 :root{--sec-panel:#F7F6FE}
 .sec-plain{background:var(--bg)}
 .sec-plain + .sec-plain{border-top:1px solid var(--line)}
+
+/* ============================================================
+   AFTER-HERO SECTIONS — the Zgraph reference
+   Dark bands, split headers, bordered logo boxes, blog cards
+   with media tiles, and a progress bar under the industry tabs.
+   ============================================================ */
+
+/* ---- 1. Dark band --------------------------------------------------
+   Light text sits on the ground; every light-surface component inside
+   re-asserts its own dark text immediately below. That order matters:
+   without the re-assert, a white card inherits white type and the text
+   disappears, which is exactly how this has broken before. */
+.sec-dark{
+  background:
+    radial-gradient(820px 420px at 18% 0%,rgba(91,75,214,.42),transparent 60%),
+    radial-gradient(680px 380px at 88% 100%,rgba(200,109,215,.24),transparent 58%),
+    linear-gradient(165deg,#191552 0%,#141139 100%);
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  color:#E7E3FA;
+}
+.sec-dark h2,.sec-dark h3,.sec-dark h4{color:#FFFFFF}
+.sec-dark p,.sec-dark li,.sec-dark figcaption{color:#C6BFEA}
+.sec-dark .muted,.sec-dark .src,.sec-dark .stat-src{color:#A9A1D6}
+.sec-dark .eyebrow{
+  color:#8FE3FA;background:rgba(143,227,250,.12);border-color:rgba(143,227,250,.30);
+}
+.sec-dark .grad-text{
+  background:linear-gradient(120deg,#6FD8F6 0%,#B9A6FF 52%,#F0A6FF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.sec-dark .sc-tag{color:#8FE3FA}
+.sec-dark .num,.sec-dark .card-num{color:#B9A6FF}
+.sec-dark hr,.sec-dark .rule{border-color:rgba(255,255,255,.14)}
+.sec-dark .stat-grid + .grid-3,
+.sec-dark .hiw-screen .line + .line{border-color:rgba(255,255,255,.14)}
+
+/* light surfaces keep their own colours on top of the dark ground */
+.sec-dark .card,.sec-dark .svc-cell,.sec-dark .stat-detail,.sec-dark .post-card,
+.sec-dark .hiw-screen,.sec-dark details{color:var(--ink)}
+.sec-dark .card h3,.sec-dark .svc-cell h3,.sec-dark .stat-detail h4,
+.sec-dark .post-card h3,.sec-dark details h3{color:var(--ink)}
+.sec-dark .card p,.sec-dark .svc-cell p,.sec-dark .stat-detail p,
+.sec-dark .post-card p,.sec-dark details p,.sec-dark .card li,.sec-dark .svc-cell li{color:var(--muted)}
+.sec-dark .hiw-screen p,.sec-dark .hiw-screen span:not(.sc-tag){color:var(--muted)}
+.sec-dark .hiw-screen .k{color:var(--cyan)}
+.sec-dark .hiw-screen .k.ok{color:var(--good)}
+/* the dot field is invisible on dark; brighten it */
+.sec-dark.sec-grid::before{background-image:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1px)}
+
+/* ---- 2. Split header: label + heading left, supporting line right ---- */
+.split-head{
+  max-width:none;display:grid;grid-template-columns:1.12fr .88fr;
+  column-gap:var(--s8);align-items:end;
+}
+.split-head .eyebrow{grid-column:1;grid-row:1;justify-self:start}
+.split-head h2{grid-column:1;grid-row:2;margin-bottom:0}
+.split-head p{grid-column:2;grid-row:1 / span 2;align-self:end;margin-top:0;padding-bottom:6px}
+@media(max-width:860px){
+  .split-head{grid-template-columns:1fr;row-gap:var(--s4)}
+  .split-head .eyebrow,.split-head h2,.split-head p{grid-column:1;grid-row:auto}
+}
+
+/* ---- 3. Integration marks as individual bordered boxes -------------- */
+.int-marks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;list-style:none;padding:0}
+.int-marks li{
+  display:flex;align-items:center;justify-content:center;
+  min-width:152px;height:78px;padding:0 var(--s5);
+  border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  transition:border-color .18s ease-out,transform .18s cubic-bezier(.2,.8,.3,1);
+}
+.int-marks li:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.sec-dark .int-marks li{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+
+/* ---- 4. Blog cards get a media tile --------------------------------- */
+.post-card{padding:0;overflow:hidden}
+.post-card > :not(.post-media){margin-left:28px;margin-right:28px}
+.post-card > :last-child{margin-bottom:28px}
+.post-media{
+  display:block;width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#0A7A96,#5B4BD6);
+}
+.post-media[data-tile="2"]{background:linear-gradient(135deg,#5B4BD6,#9A3FB8)}
+.post-media[data-tile="3"]{background:linear-gradient(135deg,#38BADF,#5B4BD6 60%,#C86DD7)}
+.post-media::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.20) 1px,transparent 1px);
+  background-size:16px 16px;
+  mask-image:linear-gradient(120deg,#000,transparent 72%);
+}
+.post-card .meta{margin-top:22px}
+
+/* ---- 5. Progress bar under the industry tabs ------------------------ */
+.tab-progress{
+  height:3px;border-radius:999px;background:var(--line);
+  margin:var(--s4) 0 var(--s6);overflow:hidden;
+}
+.tab-progress i{
+  display:block;height:100%;border-radius:999px;background:var(--grad-deep);
+  width:12.5%;transform:translateX(0);
+  transition:transform .34s cubic-bezier(.2,.8,.3,1),width .34s cubic-bezier(.2,.8,.3,1);
+}
+.sec-dark .tab-progress{background:rgba(255,255,255,.16)}
+
+/* ledger rows, tabs, founder and float cards have NO background of their own,
+   so on a dark band they sit directly on the dark ground. Treating them as
+   light cards forced dark type onto dark, which is the invisible-text failure
+   this file has hit before. They read as dark-band elements instead. */
+.sec-dark .ledger-row{border-bottom-color:rgba(255,255,255,.16)}
+.sec-dark .ledger{border-top-color:rgba(255,255,255,.16)}
+.sec-dark .ledger-row h3,.sec-dark .ledger-n{color:#FFFFFF}
+.sec-dark .ledger-row p{color:#C6BFEA}
+.sec-dark .tab{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);color:#D6D0F2}
+.sec-dark .tab:hover{border-color:rgba(143,227,250,.5);color:#FFFFFF}
+.sec-dark .tab.active{background:var(--grad-deep);border-color:transparent;color:#FFFFFF}
+.sec-dark .tab .cnt{color:inherit;opacity:.72}
+.sec-dark .founder-card h3,.sec-dark .float-card b{color:#FFFFFF}
+.sec-dark .founder-card p,.sec-dark .float-card span{color:#C6BFEA}
+.sec-dark .lead-in{color:#C6BFEA}
+
+/* numbers inside a WHITE card keep their own colour; the light violet above
+   is for numbers sitting on the dark ground. */
+.sec-dark .card .card-num,.sec-dark .card .num,
+.sec-dark .stat-detail .n{color:var(--violet)}

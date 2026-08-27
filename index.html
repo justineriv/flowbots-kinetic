@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=39">
+<link rel="stylesheet" href="style.css?v=41">
 <script>/* These are the animated designs: motion is on unless a URL explicitly
    asks for ?motion=off. A production build should restore respect for
    prefers-reduced-motion; this is a review prototype. */
@@ -177,7 +177,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 <!-- ============ WHAT WE BUILD ============ -->
 <section class="sec-inset">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal split-head">
       <span class="eyebrow">What We Build</span>
       <h2>Custom AI Automation for <span class="grad-text">Every Part of Your Business</span></h2>
       <p>If your team does it on a keyboard or a phone, we can automate it. We build AI systems around your exact workflows, connected to your existing tools.</p>
@@ -218,7 +218,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ PROBLEMS ============ -->
-<section class="sec-wash sec-rule">
+<section class="sec-dark">
   <div class="wrap">
     <div class="split">
       <div class="split-aside">
@@ -250,7 +250,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ BEFORE / AFTER ============ -->
-<section class="sec-plain">
+<section class="sec-wash sec-rule">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">The Transformation</span>
@@ -284,7 +284,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ HOW IT WORKS (animated / interactive) ============ -->
-<section class="sec-panel sec-grid">
+<section class="sec-plain">
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">How It Works</span>
@@ -347,7 +347,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ ASSESSMENT BAND ============ -->
-<section class="sec-inset sec-rule">
+<section class="sec-panel sec-grid">
   <div class="wrap">
     <div class="band reveal">
       <div>
@@ -363,9 +363,9 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ DATA ============ -->
-<section class="sec-wash">
+<section class="sec-inset">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal split-head">
       <span class="eyebrow">What the Data Says</span>
       <h2>What AI Automation <span class="grad-text">Actually Delivers</span></h2>
       <p>These aren't hypotheticals. These are documented outcomes from businesses that automated the work your team is still doing by hand.</p>
@@ -389,9 +389,9 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ PROBLEM → SOLUTION ============ -->
-<section class="sec-plain">
+<section class="sec-dark">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal split-head">
       <span class="eyebrow">Not Sure Where to Start?</span>
       <h2>Find Your Biggest <span class="grad-text">Automation Opportunity</span></h2>
       <p>Tell us what's eating your team's time. We'll tell you exactly what to automate first.</p>
@@ -487,7 +487,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ INVESTMENT ============ -->
-<section class="sec-inset">
+<section class="sec-plain">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">The Investment</span>
@@ -512,7 +512,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </div>
 
 <!-- ============ NOT A $99 CHATBOT ============ -->
-<section class="sec-wash sec-rule">
+<section class="sec-panel sec-grid">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">An Important Distinction</span>
@@ -557,7 +557,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </div>
 
 <!-- ============ SPEED TABLE ============ -->
-<section class="sec-plain" style="padding-top:0">
+<section class="sec-inset" style="padding-top:0">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">The Speed Difference</span>
@@ -580,9 +580,9 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ INDUSTRIES TABS ============ -->
-<section class="sec-panel sec-grid">
+<section class="sec-dark">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal split-head">
       <span class="eyebrow">Built for Your Industry</span>
       <h2>Automations That <span class="grad-text">Actually Fit Your Business</span></h2>
       <p>Click your industry. See the exact automations we build for businesses like yours — and why they pay for themselves.</p>
@@ -595,6 +595,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
       <button class="tab" role="tab" aria-selected="false">Automotive <span class="cnt">6</span></button>
       <button class="tab" role="tab" aria-selected="false">Restaurants <span class="cnt">6</span></button>
     </div>
+    <div class="tab-progress" aria-hidden="true"><i></i></div>
     <div data-tabpanel="industries">
       <div class="tabpanel active">
         <p class="lead-in">HVAC, plumbing, and roofing companies recover an average of $4,200/mo in missed leads alone.</p>
@@ -666,7 +667,7 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </div>
 
 <!-- ============ WHO WE ARE ============ -->
-<section class="sec-inset sec-rule">
+<section class="sec-wash sec-rule">
   <div class="wrap">
 
     <div class="section-head reveal">
@@ -717,9 +718,9 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="sec-wash">
+<section class="sec-plain">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal split-head">
       <span class="eyebrow">Common Questions</span>
       <h2>Everything <span class="grad-text">You Need to Know</span></h2>
       <p>Straight answers. No fluff.</p>
@@ -772,27 +773,30 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 </div>
 
 <!-- ============ BLOG TEASER ============ -->
-<section class="sec-plain">
+<section class="sec-panel sec-grid">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal split-head">
       <span class="eyebrow">Latest Insights</span>
       <h2>AI Automation <span class="grad-text">News &amp; Guides</span></h2>
       <p>Industry research, workforce transformation insights, and practical automation guides from the FlowBots team.</p>
     </div>
     <div class="post-grid">
       <a class="post-card reveal" href="blog-post.html">
+        <span class="post-media" data-tile="2" aria-hidden="true"></span>
         <span class="meta"><span class="cat">AI &amp; The Future of Work</span><span>Mar 23, 2026</span><span>6 min read</span></span>
         <h3>AI for Tour Operators: Automate Bookings, Confirmations, and Reviews</h3>
         <p>AI for tour operators automates booking confirmations, pre-tour preparation, post-tour review collection, and lead nurture for group inquiries…</p>
         <span class="read">Read More →</span>
       </a>
       <a class="post-card reveal" href="blog.html">
+        <span class="post-media" data-tile="3" aria-hidden="true"></span>
         <span class="meta"><span class="cat">AI &amp; The Future of Work</span><span>Mar 23, 2026</span><span>6 min read</span></span>
         <h3>AI for Fishing Charters &amp; Outdoor Recreation: Book More Trips Automatically</h3>
         <p>AI for fishing charters and outdoor recreation businesses automates trip booking, weather-related communication, post-trip review requests…</p>
         <span class="read">Read More →</span>
       </a>
       <a class="post-card reveal" href="blog.html">
+        <span class="post-media" data-tile="1" aria-hidden="true"></span>
         <span class="meta"><span class="cat">AI &amp; The Future of Work</span><span>Mar 23, 2026</span><span>6 min read</span></span>
         <h3>AI for Specialty Retail: Automate Customer Follow-Up and Loyalty Programs</h3>
         <p>AI for specialty retail automates customer follow-up, loyalty program management, personalized recommendations, and review generation…</p>
@@ -911,6 +915,6 @@ try{if(!/[?&]motion=off/.test(location.search))document.documentElement.classLis
 })();
 </script>
 
-<script src="app.js?v=39"></script>
+<script src="app.js?v=41"></script>
 </body>
 </html>
