@@ -25,6 +25,29 @@
   }
 
 
+  /* Second failsafe, homepage only.
+     The check above probes a TIME-based hero animation. The homepage
+     entrance system is SCROLL-driven (animation-timeline: view()), so a
+     viewer whose scroll timeline never resolves would pass the hero check
+     while everything below the fold sat at opacity 0. That is the session-2
+     invisible-elements bug arriving through a different door. This watches a
+     .reveal element that is actually on screen and, if it is still not
+     visible, drops motion-on so the page falls back to its finished state. */
+  if (motion && document.body.classList.contains('home-v2')) {
+    setTimeout(function () {
+      var els = document.querySelectorAll('.home-v2 .reveal, .home-v2 .stagger > *');
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var r = el.getBoundingClientRect();
+        var onScreen = r.top < window.innerHeight * 0.8 && r.bottom > 0 && r.height > 2;
+        if (onScreen && parseFloat(getComputedStyle(el).opacity) < 0.9) {
+          document.documentElement.classList.remove('motion-on');
+          return;
+        }
+      }
+    }, 1500);
+  }
+
   /* Real scrollbar width, so a full-bleed band can span the viewport without
      100vw pushing the page wider than it and creating horizontal scroll. */
   (function () {
