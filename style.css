@@ -2518,3 +2518,8 @@ html.motion-on .home-v2 .hero-in-4{animation-duration:.18s;animation-delay:0s}
    Promoted to h3; the visual treatment is unchanged. */
 .home-v2 .stat-detail h3{margin:10px 0 9px;font-size:1.05rem}
 .home-v2 .sec-dark .stat-detail h3{color:#FFFFFF}
+
+/* Founder headshots supplied by Justine, 2026-08-28. The avatar was a flex
+   box holding initials; as an image it needs to fill the same 112px rounded
+   square without distorting. Review note 1. */
+.home-v2 img.avatar{display:block;object-fit:cover;object-position:center top}
