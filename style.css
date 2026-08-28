@@ -2611,15 +2611,21 @@ html.motion-on .home-v2 .hero-in-4{animation-duration:.18s;animation-delay:0s}
 .home-v2 .ind-media{margin:0;aspect-ratio:4/3;overflow:hidden;background:rgba(255,255,255,.04)}
 .home-v2 .ind-media img{width:100%;height:100%;object-fit:cover;display:block}
 .home-v2 .ind-card h3{margin:0;padding:var(--s5) var(--s5) var(--s3);font-size:1.3rem}
+/* Sub-categories run as one wrapped line separated by the same four-pointed
+   star the integration marquee uses (\2726), rather than a stacked bullet
+   list. Justine, 2026-08-28. */
 .home-v2 .ind-card ul{
   margin:0;padding:0 var(--s5) var(--s6);list-style:none;
+  display:flex;flex-wrap:wrap;align-items:center;row-gap:4px;
 }
 .home-v2 .ind-card li{
-  position:relative;padding-left:20px;margin-bottom:7px;color:#DCEBF4;font-size:.96rem;
+  position:static;padding:0;margin:0;color:#DCEBF4;font-size:.96rem;
+  display:inline-flex;align-items:center;
 }
-.home-v2 .ind-card li::before{
-  content:"";position:absolute;left:0;top:.62em;
-  width:7px;height:7px;border-radius:50%;background:var(--blue-bright);
+.home-v2 .ind-card li::before{content:none}
+.home-v2 .ind-card li + li::before{
+  content:"\2726";display:inline-block;margin:0 .5em;
+  font-size:.6rem;line-height:1;color:var(--blue-bright);opacity:.55;
 }
 @media(max-width:860px){
   .home-v2 #industries .ind-grid{grid-template-columns:1fr;gap:var(--s5)}
@@ -2634,3 +2640,28 @@ html.motion-on .home-v2 .hero-in-4{animation-duration:.18s;animation-delay:0s}
 
 /* Back-to-top measured 42px at 390px, two short of the 44px minimum. */
 .home-v2 .to-top{min-width:44px;min-height:44px}
+
+/* ---------- Automations: textured ground and crisper card edges ----------
+   Justine, 2026-08-28. The section sits on the plain white band, which had
+   no texture while every other band has one. It takes the light-band fine
+   grid, matching .sec-lightblue, since its ground is light. */
+.home-v2 #automations{position:relative;isolation:isolate}
+.home-v2 #automations > *{position:relative;z-index:1}
+.home-v2 #automations::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(11,83,114,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(11,83,114,.06) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);
+}
+/* --line is rgba(10,22,40,.11) and all but vanished against the texture.
+   --line-2 is the brand-tinted boundary used elsewhere for controls. */
+.home-v2 .auto-card{
+  border:1px solid var(--line-2);
+  background:var(--surface);
+}
+.home-v2 .auto-card:hover{border-color:var(--blue-deep)}
+/* hairline between the photograph and its label */
+.home-v2 .auto-media{border-bottom:1px solid var(--line-2)}
