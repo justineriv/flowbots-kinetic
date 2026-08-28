@@ -2523,3 +2523,114 @@ html.motion-on .home-v2 .hero-in-4{animation-duration:.18s;animation-delay:0s}
    box holding initials; as an image it needs to fill the same 112px rounded
    square without distorting. Review note 1. */
 .home-v2 img.avatar{display:block;object-fit:cover;object-position:center top}
+
+/* ============================================================
+   HOMEPAGE v2, round 2 — 2026-08-28
+   Justine's three layout fixes plus the Automations section and
+   the rebuilt Industries section.
+   ============================================================ */
+
+/* ---------- results: four equal figures in one grid ----------
+   Justine: "make the first four boxes smaller so they can fit in a
+   grid". The heading is left-aligned rather than centred, so this
+   does not recreate the centred-island gap of review note 6. */
+.home-v2 #delivers .results-head{
+  display:block;text-align:left;margin-bottom:var(--s7);
+}
+.home-v2 #delivers .results-head .section-head{margin:0;text-align:left;max-width:none}
+.home-v2 #delivers .results-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5);
+  margin-bottom:var(--s7);
+}
+.home-v2 #delivers .results-row .stat{
+  text-align:left;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius-sm);padding:var(--s5);
+}
+.home-v2 #delivers .results-row .stat b{font-size:clamp(1.9rem,3.2vw,2.5rem);line-height:1.05}
+@media(max-width:900px){
+  .home-v2 #delivers .results-row{grid-template-columns:repeat(2,1fr);gap:var(--s4)}
+}
+@media(max-width:520px){
+  .home-v2 #delivers .results-row{grid-template-columns:1fr}
+}
+
+/* ---------- O'Leary: caption above the photograph ----------
+   It was an overlay gradient sitting on the bottom of the image. */
+.home-v2 .photo-band .bleed-figure{align-items:stretch}
+.home-v2 .bleed-caption-top{
+  position:static;background:none;color:var(--ink);
+  padding:0 0 var(--s5);width:100%;
+}
+.home-v2 .bleed-caption-top b{color:var(--ink)}
+.home-v2 .bleed-caption-top span{color:var(--muted)}
+
+/* ---------- FAQ: no side card, wide and centred, CTA beneath ---------- */
+.home-v2 .faq-wide{max-width:none}
+.home-v2 .faq-wide .faq-thread{margin:0 auto;max-width:none}
+.home-v2 .faq-cta{margin-top:var(--s7);text-align:center}
+
+/* ---------- Automations (new section) ----------
+   Sits on the plain white ground so it separates the light-blue
+   trace section above from the dark results section below without
+   forcing a re-flip of every band after it. */
+.home-v2 #automations .auto-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s5);
+}
+.home-v2 .auto-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-sm);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .22s cubic-bezier(.2,.8,.3,1), box-shadow .22s cubic-bezier(.2,.8,.3,1);
+}
+.home-v2 .auto-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.home-v2 .auto-media{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--bg-2)}
+.home-v2 .auto-media img{width:100%;height:100%;object-fit:cover;display:block}
+.home-v2 .auto-card h3{
+  font-size:.98rem;line-height:1.3;margin:0;padding:var(--s4);
+}
+@media(max-width:1100px){.home-v2 #automations .auto-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:860px){.home-v2 #automations .auto-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){
+  .home-v2 #automations .auto-grid{grid-template-columns:repeat(2,1fr);gap:var(--s4)}
+  .home-v2 .auto-card h3{font-size:.92rem;padding:var(--s3)}
+}
+
+/* ---------- Industries, rebuilt as three image-led categories ----------
+   Dark-band components are glass, never white cards. That confusion
+   was the source of nearly every invisible-text failure in session 2. */
+.home-v2 #industries .ind-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6);
+}
+.home-v2 .ind-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.home-v2 .ind-media{margin:0;aspect-ratio:4/3;overflow:hidden;background:rgba(255,255,255,.04)}
+.home-v2 .ind-media img{width:100%;height:100%;object-fit:cover;display:block}
+.home-v2 .ind-card h3{margin:0;padding:var(--s5) var(--s5) var(--s3);font-size:1.3rem}
+.home-v2 .ind-card ul{
+  margin:0;padding:0 var(--s5) var(--s6);list-style:none;
+}
+.home-v2 .ind-card li{
+  position:relative;padding-left:20px;margin-bottom:7px;color:#DCEBF4;font-size:.96rem;
+}
+.home-v2 .ind-card li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:7px;height:7px;border-radius:50%;background:var(--blue-bright);
+}
+@media(max-width:860px){
+  .home-v2 #industries .ind-grid{grid-template-columns:1fr;gap:var(--s5)}
+}
+
+/* secondary then primary, one row, never two stacked equals */
+.home-v2 .cta-pair{display:flex;gap:var(--s4);justify-content:center;flex-wrap:wrap}
+@media(max-width:520px){
+  .home-v2 .cta-pair{flex-direction:column;align-items:stretch}
+  .home-v2 .cta-pair .btn{width:100%;justify-content:center}
+}
+
+/* Back-to-top measured 42px at 390px, two short of the 44px minimum. */
+.home-v2 .to-top{min-width:44px;min-height:44px}
