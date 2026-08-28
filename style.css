@@ -2328,6 +2328,11 @@ html.motion-on .home-v2 .hero-in-4{animation-duration:.18s;animation-delay:0s}
   }
   .home-v2 .trace-n{grid-column:1/-1;margin-bottom:0}
   .home-v2 .trace-ico{margin:0}
+  /* The description must sit under the heading in column 2. Without
+     this it auto-flows to the next row in column 1 and wraps inside
+     the 54px icon track. */
+  .home-v2 .trace-step h3{grid-column:2}
+  .home-v2 .trace-step p{grid-column:2}
 }
 
 /* ---------- 6. results: heading shares the row with the first figure ----------
